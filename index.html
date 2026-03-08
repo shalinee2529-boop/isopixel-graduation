@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>จองภาพบัณฑิตน้อย - โรงเรียนศึกษากิจศึกษา</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Kanit', sans-serif; }
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=2022&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="bg-gray-50 flex flex-col min-h-screen">
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md py-4 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <div class="flex items-center space-x-2 cursor-pointer">
+                <div class="w-10 h-10 bg-amber-500 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-inner">ISO</div>
+                <span class="font-bold text-xl text-gray-800 tracking-wide">ISOPIXEL</span>
+            </div>
+            <div class="hidden md:flex space-x-8 text-gray-600 font-medium">
+                <a href="#" class="hover:text-amber-500 transition border-b-2 border-transparent hover:border-amber-500 pb-1">หน้าแรก</a>
+                <a href="#packages" class="text-amber-500 transition border-b-2 border-amber-500 pb-1">จองรูปถ่าย</a>
+                <a href="#payment" class="hover:text-amber-500 transition border-b-2 border-transparent hover:border-amber-500 pb-1">แจ้งชำระเงิน</a>
+                <a href="#status" class="hover:text-amber-500 transition border-b-2 border-transparent hover:border-amber-500 pb-1">ตรวจสอบสถานะ</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden flex items-center">
+                <button class="text-gray-600 hover:text-amber-500 focus:outline-none">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-bg py-24 md:py-32 text-center text-white relative">
+        <div class="max-w-4xl mx-auto px-4 relative z-10">
+            <div class="inline-block bg-amber-500 text-white px-4 py-1 rounded-full text-sm font-semibold tracking-wider mb-6 shadow-md animate-bounce">
+                🎉 งานแสดงสายสัมพันธ์ และพิธีมอบวุฒิบัตร
+            </div>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight drop-shadow-lg">
+                บันทึกความทรงจำก้าวแรกแห่งความสำเร็จ<br>
+                <span class="text-amber-400">"บัณฑิตน้อย"</span>
+            </h1>
+            <h2 class="text-2xl md:text-3xl font-medium mb-8 drop-shadow-md">โรงเรียนศึกษากิจศึกษา <span class="text-lg md:text-xl font-light">(ลาดพร้าว 80 แยก 14)</span></h2>
+            
+            <div class="bg-white/10 backdrop-blur-md rounded-2xl inline-block p-5 mb-8 border border-white/20 shadow-xl">
+                <p class="text-xl md:text-2xl font-medium text-white">📅 วันที่ 14 มีนาคม 2569 <span class="hidden md:inline">|</span><br class="md:hidden"> ปีการศึกษา 2568</p>
+            </div>
+
+            <p class="text-xl md:text-2xl font-light italic mb-10 text-gray-200">"ภาพสวย คมชัด เก็บไว้เป็นความทรงจำตลอดไป"</p>
+            
+            <a href="#packages" class="inline-block bg-gradient-to-r from-amber-400 to-amber-600 hover:from-amber-500 hover:to-amber-700 text-white font-bold py-4 px-10 rounded-full text-xl shadow-lg transition transform hover:-translate-y-1 hover:shadow-2xl">
+                เริ่มต้นจองแพ็กเกจ (เริ่มเพียง 600.-)
+            </a>
+        </div>
+    </header>
+
+    <!-- 4 Main Action Buttons -->
+    <section class="max-w-6xl mx-auto px-4 -mt-12 relative z-20 mb-16">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+            <a href="#packages" class="bg-white border-b-4 border-green-500 hover:border-green-600 hover:bg-green-50 group p-6 rounded-xl shadow-lg flex flex-col items-center justify-center transition duration-300">
+                <div class="bg-green-100 p-4 rounded-full mb-3 group-hover:scale-110 transition duration-300">
+                    <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                </div>
+                <h3 class="text-lg md:text-xl font-bold text-gray-800 text-center">จองรูป<br><span class="text-xs text-gray-500 font-normal uppercase">Photo Order</span></h3>
+            </a>
+            <a href="#payment" class="bg-white border-b-4 border-amber-400 hover:border-amber-500 hover:bg-amber-50 group p-6 rounded-xl shadow-lg flex flex-col items-center justify-center transition duration-300">
+                <div class="bg-amber-100 p-4 rounded-full mb-3 group-hover:scale-110 transition duration-300">
+                    <svg class="w-8 h-8 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>
+                </div>
+                <h3 class="text-lg md:text-xl font-bold text-gray-800 text-center">แจ้งชำระเงิน<br><span class="text-xs text-gray-500 font-normal uppercase">Payment</span></h3>
+            </a>
+            <a href="#download" class="bg-white border-b-4 border-orange-400 hover:border-orange-500 hover:bg-orange-50 group p-6 rounded-xl shadow-lg flex flex-col items-center justify-center transition duration-300">
+                <div class="bg-orange-100 p-4 rounded-full mb-3 group-hover:scale-110 transition duration-300">
+                    <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                </div>
+                <h3 class="text-lg md:text-xl font-bold text-gray-800 text-center">ดาวน์โหลดไฟล์<br><span class="text-xs text-gray-500 font-normal uppercase">Download</span></h3>
+            </a>
+            <a href="#status" class="bg-white border-b-4 border-blue-500 hover:border-blue-600 hover:bg-blue-50 group p-6 rounded-xl shadow-lg flex flex-col items-center justify-center transition duration-300">
+                <div class="bg-blue-100 p-4 rounded-full mb-3 group-hover:scale-110 transition duration-300">
+                    <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </div>
+                <h3 class="text-lg md:text-xl font-bold text-gray-800 text-center">สถานะการจัดทำ<br><span class="text-xs text-gray-500 font-normal uppercase">Status</span></h3>
+            </a>
+        </div>
+    </section>
+
+    <!-- 🌟 ส่วนแสดงแพ็กเกจภาพถ่าย (ดึงรูปจากไฟล์จริงภาพไม่หาย 100%) 🌟 -->
+    <section class="bg-white py-16 border-t border-gray-200" id="packages">
+        <div class="max-w-6xl mx-auto px-4">
+            
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">แพ็กเกจภาพถ่ายบัณฑิตน้อย</h2>
+                
+                <!-- โปรโมชั่น -->
+                <div class="inline-block bg-red-600 text-white px-6 py-3 rounded-xl font-bold text-lg shadow-lg animate-pulse">
+                    🔥 PROMOTION ซื้อครบ 1,700 บาท รับฟรี! ไฟล์ภาพรับปริญญาบัตร มูลค่า 200 บาท
+                </div>
+            </div>
+
+            <!-- Grid กล่องแพ็กเกจ -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- แพ็กเกจที่ 1 -->
+                <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition transform hover:-translate-y-1">
+                    <div class="bg-[#d4e157] py-3 text-center">
+                        <h3 class="text-xl font-bold text-gray-800">ชุดที่ 1</h3>
+                    </div>
+                    <div class="p-5">
+                        <div class="aspect-w-4 aspect-h-3 bg-gray-100 rounded-lg mb-4 flex items-center justify-center overflow-hidden relative">
+                            <!-- เรียกใช้ไฟล์รูปจริงชื่อ pack1.jpg (ถ้าหาไฟล์ไม่เจอจะขึ้นรูปสำรองสีเทาให้ก่อน) -->
+                            <img src="pack1.jpg" onerror="this.src='https://placehold.co/600x400/eeeeee/999999?text=รอใส่รูป+pack1.jpg'" alt="ชุดที่ 1" class="w-full h-full object-cover transition duration-300 hover:scale-105">
+                        </div>
+                        <ul class="text-gray-600 space-y-2 mb-6">
+                            <li class="flex items-start"><span class="text-green-500 mr-2">✓</span> 10x12" กรอบวิทย์</li>
+                            <li class="flex items-start"><span class="text-green-500 mr-2">✓</span> ภาพเปล่าขนาด 5x7" (3 ภาพ)</li>
+                            <li class="flex items-start text-xs text-gray-400 mt-2">*ฟรีค่าจัดส่ง</li>
+                        </ul>
+                        <div class="flex justify-between items-center border-t pt-4">
+                            <span class="text-2xl font-bold text-red-500">600 บาท</span>
+                            <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-bold transition shadow">เลือกชุดนี้</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- แพ็กเกจที่ 2 -->
+                <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition transform hover:-translate-y-1">
+                    <div class="bg-[#ba68c8] py-3 text-center">
+                        <h3 class="text-xl font-bold text-white">ชุดที่ 2</h3>
+                    </div>
+                    <div class="p-5">
+                        <div class="aspect-w-4 aspect-h-3 bg-gray-100 rounded-lg mb-4 flex items-center justify-center overflow-hidden relative">
+                            <img src="pack2.jpg" onerror="this.src='https://placehold.co/600x400/eeeeee/999999?text=รอใส่รูป+pack2.jpg'" alt="ชุดที่ 2" class="w-full h-full object-cover transition duration-300 hover:scale-105">
+                        </div>
+                        <ul class="text-gray-600 space-y-2 mb-6">
+                            <li class="flex items-start"><span class="text-green-500 mr-2">✓</span> 12x15" กรอบวิทย์</li>
+                            <li class="flex items-start"><span class="text-green-500 mr-2">✓</span> ภาพเปล่าขนาด 5x7" (3 ภาพ)</li>
+                            <li class="flex items-start text-xs text-gray-400 mt-2">*ฟรีค่าจัดส่ง</li>
+                        </ul>
+                        <div class="flex justify-between items-center border-t pt-4">
+                            <span class="text-2xl font-bold text-red-500">750 บาท</span>
+                            <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-bold transition shadow">เลือกชุดนี้</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- แพ็กเกจที่ 3 -->
+                <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition transform hover:-translate-y-1">
+                    <div class="bg-[#64b5f6] py-3 text-center">
+                        <h3 class="text-xl font-bold text-white">ชุดที่ 3</h3>
+                    </div>
+                    <div class="p-5">
+                        <div class="aspect-w-4 aspect-h-3 bg-gray-100 rounded-lg mb-4 flex items-center justify-center overflow-hidden relative">
+                            <img src="pack3.jpg" onerror="this.src='https://placehold.co/600x400/eeeeee/999999?text=รอใส่รูป+pack3.jpg'" alt="ชุดที่ 3" class="w-full h-full object-cover transition duration-300 hover:scale-105">
+                        </div>
+                        <ul class="text-gray-600 space-y-2 mb-6">
+                            <li class="flex items-start"><span class="text-green-500 mr-2">✓</span> 10x12" กรอบศิลป์</li>
+                            <li class="flex items-start"><span class="text-green-500 mr-2">✓</span> ภาพเปล่าขนาด 5x7" (3 ภาพ)</li>
+                            <li class="flex items-start text-xs text-gray-400 mt-2">*ฟรีค่าจัดส่ง</li>
+                        </ul>
+                        <div class="flex justify-between items-center border-t pt-4">
+                            <span class="text-2xl font-bold text-red-500">1,000 บาท</span>
+                            <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-bold transition shadow">เลือกชุดนี้</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- แพ็กเกจที่ 4 -->
+                <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition transform hover:-translate-y-1">
+                    <div class="bg-[#ff8a65] py-3 text-center">
+                        <h3 class="text-xl font-bold text-white">ชุดที่ 4</h3>
+                    </div>
+                    <div class="p-5">
+                        <div class="aspect-w-4 aspect-h-3 bg-gray-100 rounded-lg mb-4 flex items-center justify-center overflow-hidden relative">
+                            <img src="pack4.jpg" onerror="this.src='https://placehold.co/600x400/eeeeee/999999?text=รอใส่รูป+pack4.jpg'" alt="ชุดที่ 4" class="w-full h-full object-cover transition duration-300 hover:scale-105">
+                        </div>
+                        <ul class="text-gray-600 space-y-2 mb-6">
+                            <li class="flex items-start"><span class="text-green-500 mr-2">✓</span> 11x14" กรอบหลุยส์</li>
+                            <li class="flex items-start"><span class="text-green-500 mr-2">✓</span> ภาพเปล่าขนาด 5x7" (3 ภาพ)</li>
+                            <li class="flex items-start text-xs text-gray-400 mt-2">*ฟรีค่าจัดส่ง</li>
+                        </ul>
+                        <div class="flex justify-between items-center border-t pt-4">
+                            <span class="text-2xl font-bold text-red-500">1,450 บาท</span>
+                            <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-bold transition shadow">เลือกชุดนี้</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- แพ็กเกจที่ 5 -->
+                <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition transform hover:-translate-y-1 md:col-span-2 lg:col-span-1 lg:col-start-2">
+                    <div class="bg-[#ffd54f] py-3 text-center">
+                        <h3 class="text-xl font-bold text-gray-800">ชุดที่ 5</h3>
+                    </div>
+                    <div class="p-5">
+                        <div class="aspect-w-4 aspect-h-3 bg-gray-100 rounded-lg mb-4 flex items-center justify-center overflow-hidden relative">
+                            <img src="pack5.jpg" onerror="this.src='https://placehold.co/600x400/eeeeee/999999?text=รอใส่รูป+pack5.jpg'" alt="ชุดที่ 5" class="w-full h-full object-cover transition duration-300 hover:scale-105">
+                        </div>
+                        <ul class="text-gray-600 space-y-2 mb-6">
+                            <li class="flex items-start"><span class="text-green-500 mr-2">✓</span> 11x14" กรอบหลุยส์เดอลุกซ์</li>
+                            <li class="flex items-start"><span class="text-green-500 mr-2">✓</span> ภาพเปล่าขนาด 5x7" (3 ภาพ)</li>
+                            <li class="flex items-start text-xs text-gray-400 mt-2">*ฟรีค่าจัดส่ง</li>
+                        </ul>
+                        <div class="flex justify-between items-center border-t pt-4">
+                            <span class="text-2xl font-bold text-red-500">1,600 บาท</span>
+                            <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-bold transition shadow">เลือกชุดนี้</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 🌟 ส่วนแจ้งชำระเงิน (สแกน QR อัตโนมัติ และ อัปโหลดสลิป) 🌟 -->
+    <section class="bg-gray-50 py-16 border-t border-gray-200" id="payment">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">แจ้งชำระเงิน (Payment)</h2>
+                <p class="text-lg text-gray-600">สแกน QR Code เพื่อชำระเงิน และแนบไฟล์รูปภาพสลิปโอนเงิน (JPG, PNG) ด้านล่างได้เลยครับ</p>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row border border-gray-100">
+                <!-- ด้านซ้าย: ข้อมูลบัญชีและ QR Code -->
+                <div class="md:w-5/12 bg-amber-50 p-8 flex flex-col items-center justify-center border-b md:border-b-0 md:border-r border-amber-100 relative overflow-hidden">
+                    <div class="absolute -right-10 -top-10 text-amber-100 opacity-50">
+                        <svg class="w-40 h-40" fill="currentColor" viewBox="0 0 24 24"><path d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>
+                    </div>
+
+                    <h3 class="text-xl font-bold text-gray-800 mb-2 relative z-10">บัญชีรับชำระเงิน</h3>
+                    <p class="text-gray-600 mb-6 text-center relative z-10">บริษัท ISO PIXEL BANGKOK</p>
+                    
+                    <div class="bg-white p-2 rounded-xl shadow-md border border-gray-200 mb-6 relative z-10 transform transition hover:scale-105">
+                        <img src="124746.jpg" onerror="this.src='https://placehold.co/400x400/eeeeee/999999?text=รอใส่รูป+124746.jpg'" alt="QR Code พร้อมเพย์ 0922808871" class="w-48 h-auto object-contain rounded-lg">
+                    </div>
+                    
+                    <div class="w-full space-y-3 relative z-10">
+                        <div class="flex justify-between items-center border-b border-amber-200 pb-2">
+                            <span class="text-gray-500">ธนาคาร</span>
+                            <span class="font-bold text-[#4e2a84]">ไทยพาณิชย์ (SCB)</span>
+                        </div>
+                        <div class="flex justify-between items-center border-b border-amber-200 pb-2">
+                            <span class="text-gray-500">เลขบัญชี</span>
+                            <span class="font-bold text-gray-800 text-lg tracking-wider text-amber-600">224-2531-681</span>
+                        </div>
+                        <div class="flex justify-between items-center pb-2">
+                            <span class="text-gray-500">ชื่อบัญชี</span>
+                            <span class="font-bold text-gray-800">ชาลินี ฮุสซง</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ด้านขวา: ฟอร์มอัปโหลดสลิป -->
+                <div class="md:w-7/12 p-8 lg:p-10">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                        <svg class="w-6 h-6 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg>
+                        แนบไฟล์สลิปแจ้งโอน
+                    </h3>
+                    <form action="#" method="POST" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2" for="name">ชื่อ-นามสกุล (บัณฑิตน้อย)</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition bg-gray-50 focus:bg-white" placeholder="ด.ช. / ด.ญ. ..." required>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2" for="phone">เบอร์โทรศัพท์ (ผู้ปกครอง)</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition bg-gray-50 focus:bg-white" placeholder="09X-XXX-XXXX" required>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2" for="package">แพ็กเกจที่ต้องการสั่งจอง</label>
+                            <select id="package" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition bg-gray-50 focus:bg-white cursor-pointer" required>
+                                <option value="" disabled selected>-- กรุณาเลือกแพ็กเกจที่ตรงกับยอดโอน --</option>
+                                <option value="1">ชุดที่ 1 (600 บาท)</option>
+                                <option value="2">ชุดที่ 2 (750 บาท)</option>
+                                <option value="3">ชุดที่ 3 (1,000 บาท)</option>
+                                <option value="4">ชุดที่ 4 (1,450 บาท)</option>
+                                <option value="5">ชุดที่ 5 (1,600 บาท)</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">อัปโหลดสลิป (ไฟล์รูปภาพ JPG, PNG)</label>
+                            <!-- ระบบพรีวิวสลิปทำงานฝั่งลูกค้า ยังคงอยู่เหมือนเดิม -->
+                            <div class="mt-1 flex justify-center px-6 pt-6 pb-8 border-2 border-gray-300 border-dashed rounded-xl hover:border-amber-500 transition bg-gray-50 relative group cursor-pointer" onclick="document.getElementById('file-upload').click()">
+                                
+                                <div class="space-y-2 text-center w-full">
+                                    <div id="upload-icon-container">
+                                        <div class="w-16 h-16 bg-white rounded-full shadow flex items-center justify-center mx-auto group-hover:scale-110 transition duration-300">
+                                            <svg class="mx-auto h-8 w-8 text-amber-500" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
+                                                <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <div class="flex text-sm text-gray-600 justify-center mt-4">
+                                            <span class="relative bg-transparent rounded-md font-bold text-amber-600 hover:text-amber-500 focus-within:outline-none">
+                                                แตะเพื่อเลือกรูปสลิปจากเครื่อง
+                                                <input id="file-upload" name="file-upload" type="file" class="sr-only" accept="image/*" onchange="previewSlip(event)">
+                                            </span>
+                                        </div>
+                                        <p class="text-xs text-gray-500 mt-2">รองรับไฟล์รูปภาพเท่านั้น</p>
+                                    </div>
+
+                                    <div id="slip-preview-container" class="hidden mt-2">
+                                        <img id="slip-preview-image" src="" alt="Slip Preview" class="max-h-60 mx-auto rounded-lg shadow-md border border-gray-200 object-contain">
+                                        <div class="mt-4">
+                                            <span class="text-amber-600 text-sm underline font-medium">คลิกเพื่อเปลี่ยนรูปสลิปใหม่</span>
+                                        </div>
+                                    </div>
+
+                                    <p id="file-name" class="text-lg font-bold mt-2 break-all"></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="button" onclick="alert('ตัวอย่างจำลอง: อัปโหลดสลิปและแจ้งโอนเงินสำเร็จ!')" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-xl text-lg shadow-lg transition transform hover:-translate-y-1 flex justify-center items-center">
+                            <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            ยืนยันส่งข้อมูลและสลิป
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🌟 ส่วนตรวจสอบสถานะ (Status Tracking) 🌟 -->
+    <section class="bg-white py-16 border-t border-gray-200" id="status">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center mb-10">
+                <span class="inline-block p-3 bg-blue-50 rounded-full shadow-sm mb-4 text-blue-500">
+                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">ตรวจสอบสถานะการจัดทำรูป</h2>
+                <p class="text-lg text-gray-600">กรอกเบอร์โทรศัพท์ที่ใช้ในการสั่งจอง เพื่อติดตามความคืบหน้า</p>
+            </div>
+
+            <!-- กล่องค้นหาสถานะ -->
+            <div class="bg-gray-50 rounded-2xl p-6 md:p-8 shadow-md border border-gray-200 mb-10">
+                <form onsubmit="checkStatus(event)" class="flex flex-col md:flex-row gap-4 justify-center items-center">
+                    <div class="w-full md:w-2/3 relative">
+                        <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                            <svg class="h-6 w-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg>
+                        </div>
+                        <input type="tel" id="search-phone" class="w-full pl-12 pr-4 py-4 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition text-lg" placeholder="กรอกเบอร์โทรศัพท์ เช่น 0922808871" required>
+                    </div>
+                    <button type="submit" class="w-full md:w-1/3 bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-xl text-lg shadow-lg transition transform hover:-translate-y-1">
+                        ค้นหาข้อมูล
+                    </button>
+                </form>
+            </div>
+
+            <!-- ผลลัพธ์การค้นหา -->
+            <div id="status-result" class="hidden bg-white rounded-2xl shadow-xl border border-blue-100 overflow-hidden transform transition-all duration-500 opacity-0 translate-y-4">
+                <div class="bg-blue-50 px-6 py-4 border-b border-blue-100 flex flex-col md:flex-row justify-between items-center">
+                    <div>
+                        <h3 class="font-bold text-gray-800 text-lg">บัณฑิตน้อย: <span class="text-blue-600">ด.ช. รักดี เรียนเก่ง</span></h3>
+                        <p class="text-gray-600 text-sm mt-1">เบอร์โทร: 092-XXX-8871 | วันที่จอง: 14 มี.ค. 2569</p>
+                    </div>
+                    <div class="mt-4 md:mt-0 bg-white px-4 py-2 rounded-lg shadow-sm border border-gray-200">
+                        <span class="text-sm text-gray-500">แพ็กเกจที่เลือก:</span>
+                        <span class="font-bold text-amber-600 ml-2">ชุดที่ 1 (600 บาท)</span>
+                    </div>
+                </div>
+
+                <div class="p-6 md:p-10">
+                    <div class="relative">
+                        <div class="absolute left-6 md:left-8 top-0 h-full w-1 bg-gray-200"></div>
+
+                        <!-- Step 1 -->
+                        <div class="relative flex items-center mb-10">
+                            <div class="w-12 h-12 md:w-16 md:h-16 bg-green-500 rounded-full flex items-center justify-center shadow-lg border-4 border-white z-10 text-white">
+                                <svg class="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            <div class="ml-6 flex-1">
+                                <h4 class="text-lg font-bold text-gray-800">ได้รับแจ้งโอนเงินแล้ว</h4>
+                                <p class="text-gray-500 text-sm">รับสลิปแจ้งโอนเงิน รอเจ้าหน้าที่ตรวจสอบ</p>
+                            </div>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="relative flex items-center mb-10">
+                            <div class="w-12 h-12 md:w-16 md:h-16 bg-green-500 rounded-full flex items-center justify-center shadow-lg border-4 border-white z-10 text-white">
+                                <svg class="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            </div>
+                            <div class="ml-6 flex-1">
+                                <h4 class="text-lg font-bold text-gray-800">ยืนยันการสั่งจองสำเร็จ</h4>
+                                <p class="text-gray-500 text-sm">ตรวจสอบยอดเงินถูกต้อง บันทึกคิวเข้าระบบแล้ว</p>
+                            </div>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="relative flex items-center mb-10">
+                            <div class="w-12 h-12 md:w-16 md:h-16 bg-amber-500 rounded-full flex items-center justify-center shadow-lg border-4 border-white z-10 text-white animate-pulse">
+                                <svg class="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                            </div>
+                            <div class="ml-6 flex-1 bg-amber-50 p-4 rounded-xl border border-amber-100">
+                                <h4 class="text-lg font-bold text-amber-700">กำลังดำเนินการจัดทำและเข้ากรอบรูป</h4>
+                                <p class="text-amber-600 text-sm">กำลังคัดเลือกรูปภาพ แต่งแสงสี และประกอบเข้ากรอบ (ใช้เวลาประมาณ 10-15 วัน)</p>
+                            </div>
+                        </div>
+
+                        <!-- Step 4 -->
+                        <div class="relative flex items-center">
+                            <div class="w-12 h-12 md:w-16 md:h-16 bg-gray-200 rounded-full flex items-center justify-center shadow-inner border-4 border-white z-10 text-gray-400">
+                                <svg class="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg>
+                            </div>
+                            <div class="ml-6 flex-1">
+                                <h4 class="text-lg font-bold text-gray-400">จัดส่งพัสดุเรียบร้อยแล้ว</h4>
+                                <p class="text-gray-400 text-sm">รออัปเดตเลขพัสดุ (Tracking Number)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Script ควบคุมการโชว์รูปสลิปและเช็คสถานะ -->
+    <script>
+        // ระบบแจ้งชำระเงิน (ลูกค้า): พรีวิวรูปสลิป
+        function previewSlip(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('upload-icon-container').classList.add('hidden');
+                    const previewContainer = document.getElementById('slip-preview-container');
+                    const previewImage = document.getElementById('slip-preview-image');
+                    previewImage.src = e.target.result;
+                    previewContainer.classList.remove('hidden');
+                    document.getElementById('file-name').innerHTML = '<span class="text-green-600 text-lg">✅ แนบสลิปเรียบร้อยแล้ว</span>';
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+
+        // ระบบตรวจสอบสถานะ
+        function checkStatus(event) {
+            event.preventDefault();
+            const phoneInput = document.getElementById('search-phone').value;
+            const resultCard = document.getElementById('status-result');
+            
+            if(phoneInput) {
+                resultCard.classList.remove('hidden');
+                setTimeout(() => {
+                    resultCard.classList.remove('opacity-0', 'translate-y-4');
+                    resultCard.classList.add('opacity-100', 'translate-y-0');
+                }, 50);
+                resultCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+    </script>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-12 pb-8 border-t-4 border-amber-500 mt-auto">
+        <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 text-center md:text-left">
+            <div>
+                <h4 class="text-2xl font-bold mb-4 flex items-center justify-center md:justify-start">
+                    <div class="w-8 h-8 bg-amber-500 rounded-full flex items-center justify-center text-white font-bold text-sm mr-2">ISO</div>
+                    ISOPIXEL
+                </h4>
+                <p class="text-gray-400 mb-4">บริการถ่ายภาพงานรับปริญญา งานพิธีการ และสตูดิโอ ด้วยประสบการณ์ระดับมืออาชีพมากกว่า 20 ปี</p>
+            </div>
+            <div>
+                <h4 class="text-xl font-bold mb-4 text-amber-400">ติดต่อสอบถาม</h4>
+                <p class="text-white text-lg font-bold mb-2">โทร: 092-280-8871</p>
+                <p class="text-white text-lg font-bold mb-2">โทร: 081-092-9005</p>
+                <p class="text-gray-400 mb-2 mt-4">LINE ID: chalineejeab</p>
+                <p class="text-gray-400">จันทร์-เสาร์ 09:00 - 17:00 น. (หยุดวันอาทิตย์)</p>
+            </div>
+            <div>
+                <h4 class="text-xl font-bold mb-4">เมนูด่วน</h4>
+                <ul class="text-gray-400 space-y-2">
+                    <li><a href="#" class="hover:text-amber-500 transition">หน้าแรก</a></li>
+                    <li><a href="#packages" class="hover:text-amber-500 transition">จองภาพออนไลน์ (แพ็กเกจ)</a></li>
+                    <li><a href="#payment" class="hover:text-amber-500 transition">แจ้งชำระเงิน</a></li>
+                    <li><a href="#status" class="hover:text-amber-500 transition">ตรวจสอบสถานะ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 pt-8 text-center text-sm text-gray-500">
+            <p>© 2026 ISOPIXEL STUDIO. All Rights Reserved. ออกแบบสำหรับโรงเรียนศึกษากิจศึกษา</p>
+        </div>
+    </footer>
+
+</body>
+</html>
