@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ระบบจองภาพบัณฑิตน้อย - โรงเรียนศึกษากิจศึกษา</title>
+    <title>จองภาพบัณฑิตน้อย - โรงเรียนศึกษากิจศึกษา</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Kanit', sans-serif; }
         .hero-bg {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2000&auto=format&fit=crop');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=2022&auto=format&fit=crop');
             background-size: cover; background-position: center;
         }
         .loading-spinner {
@@ -19,182 +19,254 @@
             animation: spin 1s linear infinite;
         }
         @keyframes spin { to { transform: rotate(360deg); } }
-        .card-shadow { box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1); }
+        html { scroll-behavior: smooth; }
     </style>
 </head>
-<body class="bg-slate-50 flex flex-col min-h-screen">
+<body class="bg-gray-50 flex flex-col min-h-screen">
 
     <!-- Navbar -->
-    <nav class="bg-white shadow-sm py-4 sticky top-0 z-50">
+    <nav class="bg-white shadow-md py-4 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
             <div class="flex items-center space-x-2">
-                <div class="w-10 h-10 bg-amber-500 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-md">ISO</div>
-                <span class="font-bold text-xl text-gray-800 tracking-tight">ISOPIXEL <span class="text-amber-500 text-sm">GRADUATION</span></span>
+                <div class="w-10 h-10 bg-amber-500 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-inner">ISO</div>
+                <span class="font-bold text-xl text-gray-800 tracking-wide">ISOPIXEL</span>
             </div>
-            <div class="flex space-x-4">
-                <a href="#payment" class="bg-amber-500 text-white px-5 py-2 rounded-full text-xs font-bold uppercase shadow-lg hover:bg-amber-600 transition tracking-wider">จองภาพถ่าย</a>
+            <div class="hidden md:flex space-x-8 text-gray-600 font-medium">
+                <a href="#packages" class="hover:text-amber-500 transition border-b-2 border-transparent hover:border-amber-500 pb-1">แพ็กเกจ</a>
+                <a href="#payment" class="text-amber-500 transition border-b-2 border-amber-500 pb-1">สั่งจอง/แจ้งโอน</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero -->
-    <header class="hero-bg py-24 text-center text-white">
-        <div class="max-w-4xl mx-auto px-4 text-center">
-            <h1 class="text-3xl md:text-5xl font-bold mb-4 drop-shadow-lg leading-tight text-center">จองภาพถ่าย "บัณฑิตน้อย"</h1>
-            <p class="text-xl md:text-2xl text-amber-400 mb-2 font-light text-center">โรงเรียนศึกษากิจศึกษา</p>
-            <p class="text-sm md:text-base opacity-80 italic text-center">"บันทึกความทรงจำก้าวแรกแห่งความสำเร็จ ภาพสวย คมชัด ตลอดไป"</p>
+    <!-- Hero Section -->
+    <header class="hero-bg py-20 text-center text-white relative">
+        <div class="max-w-4xl mx-auto px-4 relative z-10">
+            <div class="inline-block bg-amber-500 text-white px-4 py-1 rounded-full text-xs font-semibold tracking-wider mb-6 shadow-md">
+                🎉 งานแสดงสายสัมพันธ์ และพิธีมอบวุฒิบัตร
+            </div>
+            <h1 class="text-3xl md:text-5xl font-bold mb-4 leading-tight drop-shadow-lg">
+                บันทึกความทรงจำก้าวแรกแห่งความสำเร็จ<br>
+                <span class="text-amber-400">"บัณฑิตน้อย"</span>
+            </h1>
+            <h2 class="text-xl md:text-2xl font-medium mb-6">โรงเรียนศึกษากิจศึกษา <span class="text-sm font-light">(ลาดพร้าว 80)</span></h2>
+            <p class="text-lg opacity-90">📅 วันที่ 14 มีนาคม 2569 | ปีการศึกษา 2568</p>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="flex-grow max-w-6xl mx-auto w-full px-4 py-12 -mt-16">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
-            
-            <!-- ส่วนข้อมูลบัญชีและเงื่อนไข (ฝั่งซ้าย) -->
-            <div class="lg:col-span-5 space-y-6">
-                <div class="bg-white rounded-[2.5rem] card-shadow p-8 border border-slate-100 flex flex-col items-center">
-                    <h3 class="text-lg font-bold text-gray-800 mb-6 uppercase tracking-widest text-center">ชำระเงินผ่าน QR Code</h3>
-                    
-                    <div class="bg-slate-50 p-4 rounded-3xl border border-slate-100 mb-8 transform transition hover:scale-105">
-                        <!-- QR Code -->
-                        <img src="https://promptpay.io/0922808871.png" alt="QR Code" class="w-56 h-auto rounded-xl">
-                    </div>
+    <!-- 🌟 ส่วนแสดงแพ็กเกจภาพถ่าย 🌟 -->
+    <section class="max-w-7xl mx-auto px-4 py-12" id="packages">
+        <div class="text-center mb-10">
+            <h2 class="text-3xl font-bold text-slate-800 mb-2">แพ็กเกจภาพถ่ายบัณฑิตน้อย</h2>
+            <div class="h-1 w-20 bg-amber-500 mx-auto rounded-full mb-4"></div>
+            <div class="inline-block bg-red-600 text-white px-6 py-2 rounded-xl font-bold text-sm shadow-lg animate-pulse">
+                🔥 โปรโมชั่น! ซื้อครบ 1,700.- รับฟรี! ไฟล์ภาพ (มูลค่า 200.-)
+            </div>
+        </div>
 
-                    <div class="w-full space-y-4">
-                        <div class="flex items-center space-x-4 bg-purple-50 p-5 rounded-2xl border border-purple-100 shadow-sm">
-                            <div class="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center text-white font-bold text-sm uppercase">SCB</div>
-                            <div>
-                                <p class="text-[10px] text-purple-600 font-bold uppercase tracking-widest text-left">ธนาคารไทยพาณิชย์</p>
-                                <p class="text-xl font-bold text-slate-800 tracking-wider font-mono">224-2531-681</p>
-                            </div>
-                        </div>
-                        <div class="bg-slate-50 p-5 rounded-2xl text-center border border-slate-100">
-                            <p class="text-[10px] text-slate-400 uppercase font-bold mb-1 tracking-[0.2em]">ชื่อบัญชี</p>
-                            <p class="text-xl font-bold text-slate-800">ชาลินี ฮุสซง</p>
-                        </div>
-                    </div>
-
-                    <div class="mt-8 w-full bg-blue-50 p-6 rounded-3xl border border-blue-100 text-blue-900 shadow-sm">
-                        <p class="font-bold mb-3 flex items-center text-base"><span class="mr-2 text-xl">📌</span> เงื่อนไขการรับรูปภาพ:</p>
-                        <ul class="space-y-3 text-sm">
-                            <li class="flex items-start">
-                                <span class="bg-blue-200 text-blue-700 w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold mr-3 mt-0.5 shadow-sm">1</span>
-                                <span><b>นัดรับที่โรงเรียน (ฟรี):</b> <br><span class="opacity-75">ไม่เกิน 2 สัปดาห์หลังจากวันงาน</span></span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="bg-blue-200 text-blue-700 w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold mr-3 mt-0.5 shadow-sm">2</span>
-                                <span><b>จัดส่งถึงบ้าน:</b> <br><span class="opacity-75 text-orange-600 font-bold">มีค่าบริการจัดส่ง 150 บาท</span></span>
-                            </li>
-                        </ul>
-                    </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            <!-- Pack 1 -->
+            <div class="bg-white rounded-2xl shadow-md border border-slate-100 overflow-hidden flex flex-col hover:shadow-xl transition">
+                <div class="bg-[#d4e157] py-2 text-center font-bold text-gray-800">ชุดที่ 1</div>
+                <img src="pack1.jpg" onerror="this.src='https://placehold.co/400x600?text=ชุดที่+1'" class="w-full h-64 object-cover">
+                <div class="p-4 flex-grow flex flex-col text-center">
+                    <p class="text-amber-600 font-bold text-xl mb-2">600.-</p>
+                    <ul class="text-[11px] text-slate-500 text-left space-y-1 mb-4 flex-grow">
+                        <li>• 10x12" กรอบวิทย์</li>
+                        <li>• ภาพ 5x7" (3 ใบ)</li>
+                        <li class="text-blue-600 font-bold">• นัดรับที่โรงเรียน (ฟรี)</li>
+                    </ul>
+                    <a href="#payment" class="bg-slate-800 text-white py-2 rounded-lg text-xs font-bold hover:bg-slate-700 transition">จองชุดนี้</a>
                 </div>
             </div>
-
-            <!-- แบบฟอร์มสั่งจอง (ฝั่งขวา) -->
-            <div class="lg:col-span-7" id="payment">
-                <div class="bg-white rounded-[2.5rem] card-shadow p-8 md:p-12 border border-slate-100">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-2">ข้อมูลผู้ปกครอง</h2>
-                    <p class="text-slate-400 mb-10 font-light">โปรดกรอกข้อมูลเพื่อบันทึกลงฐานข้อมูล Google Sheets</p>
-
-                    <form id="bookingForm" class="space-y-6">
-                        <div class="space-y-2">
-                            <label class="text-sm font-bold text-slate-600 ml-1 uppercase tracking-wider">ชื่อ-นามสกุล (บัณฑิตน้อย)</label>
-                            <input type="text" name="name" placeholder="ด.ช. / ด.ญ. ..." class="w-full p-5 bg-slate-50 border-0 rounded-2xl focus:ring-2 focus:ring-amber-500 transition shadow-inner" required>
-                        </div>
-                        
-                        <div class="space-y-2">
-                            <label class="text-sm font-bold text-slate-600 ml-1 uppercase tracking-wider">เบอร์โทรศัพท์ติดต่อ</label>
-                            <input type="tel" name="phone" placeholder="08x-xxx-xxxx" class="w-full p-5 bg-slate-50 border-0 rounded-2xl focus:ring-2 focus:ring-amber-500 transition shadow-inner" required>
-                        </div>
-
-                        <div class="space-y-2">
-                            <label class="text-sm font-bold text-slate-600 ml-1 uppercase tracking-wider">แพ็กเกจชุดภาพถ่าย</label>
-                            <select name="package" class="w-full p-5 bg-slate-50 border-0 rounded-2xl focus:ring-2 focus:ring-amber-500 transition shadow-inner appearance-none cursor-pointer" required>
-                                <option value="" disabled selected>-- เลือกชุดภาพ --</option>
-                                <option value="ชุดที่ 1 (600.-)">ชุดที่ 1 (600 บาท)</option>
-                                <option value="ชุดที่ 2 (750.-)">ชุดที่ 2 (750 บาท)</option>
-                                <option value="ชุดที่ 3 (1,000.-)">ชุดที่ 3 (1,000 บาท)</option>
-                                <option value="ชุดที่ 4 (1,450.-)">ชุดที่ 4 (1,450 บาท)</option>
-                                <option value="ชุดที่ 5 (1,600.-)">ชุดที่ 5 (1,600 บาท)</option>
-                            </select>
-                        </div>
-
-                        <!-- ส่วนเลือกการรับสินค้า -->
-                        <div class="space-y-4 bg-slate-50 p-6 rounded-3xl border border-slate-100 shadow-inner">
-                            <label class="text-sm font-bold text-slate-600 uppercase tracking-widest">รูปแบบการรับสินค้า</label>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <label class="flex items-center space-x-4 cursor-pointer p-4 bg-white rounded-2xl border border-slate-200 transition hover:border-amber-400 hover:shadow-md">
-                                    <input type="radio" name="shipping" value="นัดรับโรงเรียน (ฟรี)" class="w-6 h-6 text-amber-500" checked onchange="toggleAddress(false)">
-                                    <span class="text-slate-700 font-medium">นัดรับโรงเรียน <b>(ฟรี)</b></span>
-                                </label>
-                                <label class="flex items-center space-x-4 cursor-pointer p-4 bg-white rounded-2xl border border-slate-200 transition hover:border-amber-400 hover:shadow-md">
-                                    <input type="radio" name="shipping" value="จัดส่งถึงบ้าน (+150.-)" class="w-6 h-6 text-amber-500" onchange="toggleAddress(true)">
-                                    <span class="text-slate-700 font-medium text-sm">ส่งบ้าน <b>(+150.-)</b></span>
-                                </label>
-                            </div>
-                        </div>
-
-                        <!-- ช่องกรอกที่อยู่ -->
-                        <div id="addressBox" class="hidden space-y-2 transform transition-all duration-300">
-                            <label class="text-sm font-bold text-slate-600 ml-1">ที่อยู่จัดส่งโดยละเอียด</label>
-                            <textarea name="address" rows="3" placeholder="บ้านเลขที่ ถนน แขวง เขต รหัสไปรษณีย์..." class="w-full p-5 bg-slate-50 border-0 rounded-2xl focus:ring-2 focus:ring-amber-500 transition shadow-inner"></textarea>
-                        </div>
-                        
-                        <div class="space-y-2">
-                            <label class="text-sm font-bold text-slate-600 ml-1 uppercase tracking-widest text-left">หลักฐานสลิปโอนเงิน</label>
-                            <div class="relative border-2 border-dashed border-slate-200 rounded-3xl p-10 text-center bg-slate-50 hover:bg-white hover:border-amber-400 transition cursor-pointer group shadow-inner" onclick="document.getElementById('slipInput').click()">
-                                <div id="uploadPreview" class="space-y-4">
-                                    <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto shadow-sm group-hover:scale-110 transition border border-slate-100">
-                                        <span class="text-3xl text-amber-500">📷</span>
-                                    </div>
-                                    <div>
-                                        <p class="text-slate-600 font-bold text-center">คลิกเพื่ออัปโหลดรูปสลิป</p>
-                                        <p class="text-[10px] text-slate-400 mt-1 uppercase text-center">JPG, PNG (MAX 5MB)</p>
-                                    </div>
-                                </div>
-                                <input type="file" id="slipInput" accept="image/*" class="hidden" required onchange="handlePreview(this)">
-                            </div>
-                        </div>
-
-                        <button type="submit" id="submitBtn" class="w-full bg-gradient-to-br from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-bold py-6 rounded-3xl shadow-xl shadow-amber-200 transition transform hover:-translate-y-1 flex justify-center items-center text-xl tracking-widest uppercase">
-                            <span id="btnText">ยืนยันการจอง</span>
-                        </button>
-                    </form>
+            <!-- Pack 2 -->
+            <div class="bg-white rounded-2xl shadow-md border border-slate-100 overflow-hidden flex flex-col hover:shadow-xl transition">
+                <div class="bg-[#ba68c8] py-2 text-center font-bold text-white">ชุดที่ 2</div>
+                <img src="pack2.jpg" onerror="this.src='https://placehold.co/400x600?text=ชุดที่+2'" class="w-full h-64 object-cover">
+                <div class="p-4 flex-grow flex flex-col text-center">
+                    <p class="text-amber-600 font-bold text-xl mb-2">750.-</p>
+                    <ul class="text-[11px] text-slate-500 text-left space-y-1 mb-4 flex-grow">
+                        <li>• 12x15" กรอบวิทย์</li>
+                        <li>• ภาพ 5x7" (3 ใบ)</li>
+                        <li class="text-blue-600 font-bold">• นัดรับที่โรงเรียน (ฟรี)</li>
+                    </ul>
+                    <a href="#payment" class="bg-slate-800 text-white py-2 rounded-lg text-xs font-bold hover:bg-slate-700 transition">จองชุดนี้</a>
+                </div>
+            </div>
+            <!-- Pack 3 -->
+            <div class="bg-white rounded-2xl shadow-md border border-slate-100 overflow-hidden flex flex-col hover:shadow-xl transition">
+                <div class="bg-[#64b5f6] py-2 text-center font-bold text-white">ชุดที่ 3</div>
+                <img src="pack3.jpg" onerror="this.src='https://placehold.co/400x600?text=ชุดที่+3'" class="w-full h-64 object-cover">
+                <div class="p-4 flex-grow flex flex-col text-center">
+                    <p class="text-amber-600 font-bold text-xl mb-2">1,000.-</p>
+                    <ul class="text-[11px] text-slate-500 text-left space-y-1 mb-4 flex-grow">
+                        <li>• 10x12" กรอบศิลป์</li>
+                        <li>• ภาพ 5x7" (3 ใบ)</li>
+                        <li class="text-blue-600 font-bold">• นัดรับที่โรงเรียน (ฟรี)</li>
+                    </ul>
+                    <a href="#payment" class="bg-slate-800 text-white py-2 rounded-lg text-xs font-bold hover:bg-slate-700 transition">จองชุดนี้</a>
+                </div>
+            </div>
+            <!-- Pack 4 -->
+            <div class="bg-white rounded-2xl shadow-md border border-slate-100 overflow-hidden flex flex-col hover:shadow-xl transition">
+                <div class="bg-[#ff8a65] py-2 text-center font-bold text-white">ชุดที่ 4</div>
+                <img src="pack4.jpg" onerror="this.src='https://placehold.co/400x600?text=ชุดที่+4'" class="w-full h-64 object-cover">
+                <div class="p-4 flex-grow flex flex-col text-center">
+                    <p class="text-amber-600 font-bold text-xl mb-2">1,450.-</p>
+                    <ul class="text-[11px] text-slate-500 text-left space-y-1 mb-4 flex-grow">
+                        <li>• 11x14" กรอบหลุยส์</li>
+                        <li>• ภาพ 5x7" (3 ใบ)</li>
+                        <li class="text-blue-600 font-bold">• นัดรับที่โรงเรียน (ฟรี)</li>
+                    </ul>
+                    <a href="#payment" class="bg-slate-800 text-white py-2 rounded-lg text-xs font-bold hover:bg-slate-700 transition">จองชุดนี้</a>
+                </div>
+            </div>
+            <!-- Pack 5 -->
+            <div class="bg-white rounded-2xl shadow-md border border-slate-100 overflow-hidden flex flex-col hover:shadow-xl transition">
+                <div class="bg-[#ffd54f] py-2 text-center font-bold text-gray-800">ชุดที่ 5</div>
+                <img src="pack5.jpg" onerror="this.src='https://placehold.co/400x600?text=ชุดที่+5'" class="w-full h-64 object-cover">
+                <div class="p-4 flex-grow flex flex-col text-center">
+                    <p class="text-amber-600 font-bold text-xl mb-2">1,600.-</p>
+                    <ul class="text-[11px] text-slate-500 text-left space-y-1 mb-4 flex-grow">
+                        <li>• 11x14" หลุยส์เดอลุกซ์</li>
+                        <li>• ภาพ 5x7" (3 ใบ)</li>
+                        <li class="text-blue-600 font-bold">• นัดรับที่โรงเรียน (ฟรี)</li>
+                    </ul>
+                    <a href="#payment" class="bg-slate-800 text-white py-2 rounded-lg text-xs font-bold hover:bg-slate-700 transition">จองชุดนี้</a>
                 </div>
             </div>
         </div>
-    </main>
+    </section>
+
+    <!-- 🌟 ส่วนแจ้งชำระเงินและแบบฟอร์ม 🌟 -->
+    <section class="max-w-6xl mx-auto px-4 py-12 -mt-6" id="payment">
+        <div class="bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col lg:flex-row border border-slate-100">
+            
+            <!-- ด้านซ้าย: ข้อมูลบัญชี -->
+            <div class="lg:w-5/12 bg-amber-50 p-8 flex flex-col items-center border-b lg:border-b-0 lg:border-r border-amber-100">
+                <h3 class="text-xl font-bold text-gray-800 mb-6 uppercase tracking-wider">ชำระเงินผ่าน QR Code</h3>
+                
+                <div class="bg-white p-3 rounded-2xl shadow-md mb-8 transform transition hover:scale-105">
+                    <!-- ดึงรูปสแกนจ่ายของคุณครู -->
+                    <img src="124746.jpg" onerror="this.src='https://promptpay.io/0922808871.png'" alt="QR Code" class="w-56 h-auto rounded-lg">
+                </div>
+
+                <div class="w-full space-y-4">
+                    <div class="flex items-center space-x-4 bg-purple-50 p-4 rounded-2xl border border-purple-100">
+                        <div class="w-10 h-10 bg-purple-600 rounded-lg flex items-center justify-center text-white font-bold text-xs uppercase shadow-sm">SCB</div>
+                        <div>
+                            <p class="text-[10px] text-purple-600 font-bold uppercase tracking-widest">ธนาคารไทยพาณิชย์</p>
+                            <p class="text-lg font-bold text-slate-800 tracking-wider">224-2531-681</p>
+                        </div>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-2xl text-center border border-slate-100 shadow-inner">
+                        <p class="text-[10px] text-slate-400 uppercase font-bold mb-1 tracking-widest">ชื่อบัญชี</p>
+                        <p class="text-lg font-bold text-slate-800">ชาลินี ฮุสซง</p>
+                    </div>
+                </div>
+
+                <div class="mt-8 w-full bg-blue-50 p-5 rounded-2xl border border-blue-100 text-blue-900 text-sm">
+                    <p class="font-bold mb-2 flex items-center"><span class="mr-2">🚚</span> เงื่อนไขการรับสินค้า:</p>
+                    <ul class="space-y-2">
+                        <li>• <b>นัดรับที่โรงเรียน (ฟรี):</b> ภายใน 2 สัปดาห์หลังงาน</li>
+                        <li>• <b>จัดส่งถึงบ้าน:</b> มีค่าบริการ <span class="text-red-600 font-bold">150 บาท</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ด้านขวา: ฟอร์มสั่งจอง -->
+            <div class="lg:w-7/12 p-8 md:p-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                    <span class="bg-amber-500 text-white w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm italic shadow-sm">📝</span>
+                    แบบฟอร์มจองภาพและส่งสลิป
+                </h2>
+
+                <form id="bookingForm" class="space-y-5">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 text-left">
+                        <div class="space-y-1">
+                            <label class="text-xs font-bold text-slate-500 ml-1">ชื่อ-นามสกุล (บัณฑิตน้อย)</label>
+                            <input type="text" name="name" placeholder="ระบุชื่อจริง-นามสกุล" class="w-full p-4 bg-slate-50 border-0 rounded-2xl focus:ring-2 focus:ring-amber-500 transition shadow-inner" required>
+                        </div>
+                        <div class="space-y-1">
+                            <label class="text-xs font-bold text-slate-500 ml-1">เบอร์โทรศัพท์ติดต่อ</label>
+                            <input type="tel" name="phone" placeholder="ระบุเบอร์โทร" class="w-full p-4 bg-slate-50 border-0 rounded-2xl focus:ring-2 focus:ring-amber-500 transition shadow-inner" required>
+                        </div>
+                    </div>
+
+                    <div class="space-y-1 text-left">
+                        <label class="text-xs font-bold text-slate-500 ml-1">เลือกแพ็กเกจ</label>
+                        <select name="package" class="w-full p-4 bg-slate-50 border-0 rounded-2xl focus:ring-2 focus:ring-amber-500 transition shadow-inner cursor-pointer" required>
+                            <option value="" disabled selected>-- โปรดเลือกชุดภาพ --</option>
+                            <option value="ชุดที่ 1 (600.-)">ชุดที่ 1 (600 บาท)</option>
+                            <option value="ชุดที่ 2 (750.-)">ชุดที่ 2 (750 บาท)</option>
+                            <option value="ชุดที่ 3 (1,000.-)">ชุดที่ 3 (1,000 บาท)</option>
+                            <option value="ชุดที่ 4 (1,450.-)">ชุดที่ 4 (1,450 บาท)</option>
+                            <option value="ชุดที่ 5 (1,600.-)">ชุดที่ 5 (1,600 บาท)</option>
+                        </select>
+                    </div>
+
+                    <!-- การรับสินค้า -->
+                    <div class="space-y-3 bg-slate-50 p-5 rounded-3xl border border-slate-100 shadow-inner text-left">
+                        <label class="text-xs font-bold text-slate-500 uppercase tracking-widest">รูปแบบการรับสินค้า</label>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                            <label class="flex items-center space-x-3 cursor-pointer p-3 bg-white rounded-xl border border-slate-200 transition hover:border-amber-400">
+                                <input type="radio" name="shipping" value="นัดรับโรงเรียน (ฟรี)" class="w-5 h-5 text-amber-500" checked onchange="toggleAddress(false)">
+                                <span class="text-slate-700 text-sm">นัดรับโรงเรียน <b>(ฟรี)</b></span>
+                            </label>
+                            <label class="flex items-center space-x-3 cursor-pointer p-3 bg-white rounded-xl border border-slate-200 transition hover:border-amber-400">
+                                <input type="radio" name="shipping" value="จัดส่งถึงบ้าน (+150.-)" class="w-5 h-5 text-amber-500" onchange="toggleAddress(true)">
+                                <span class="text-slate-700 text-sm">ส่งบ้าน <b>(+150.-)</b></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- ช่องที่อยู่ -->
+                    <div id="addressBox" class="hidden space-y-1 text-left animate-pulse">
+                        <label class="text-xs font-bold text-slate-500 ml-1">ที่อยู่จัดส่ง (กรณีส่งบ้าน)</label>
+                        <textarea name="address" rows="3" placeholder="บ้านเลขที่ ถนน แขวง เขต รหัสไปรษณีย์..." class="w-full p-4 bg-slate-50 border-0 rounded-2xl focus:ring-2 focus:ring-amber-500 transition shadow-inner"></textarea>
+                    </div>
+                    
+                    <div class="space-y-2 text-left">
+                        <label class="text-xs font-bold text-slate-500 ml-1 uppercase tracking-widest">หลักฐานสลิปโอนเงิน</label>
+                        <div class="relative border-2 border-dashed border-slate-200 rounded-3xl p-8 text-center bg-slate-50 hover:bg-white hover:border-amber-400 transition cursor-pointer group shadow-inner" onclick="document.getElementById('slipInput').click()">
+                            <div id="uploadPreview" class="space-y-3">
+                                <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center mx-auto shadow-sm group-hover:scale-110 transition border border-slate-100 text-2xl">📸</div>
+                                <p class="text-slate-500 font-bold text-sm uppercase">แตะเพื่ออัปโหลดสลิป</p>
+                            </div>
+                            <input type="file" id="slipInput" accept="image/*" class="hidden" required onchange="handlePreview(this)">
+                        </div>
+                    </div>
+
+                    <button type="submit" id="submitBtn" class="w-full bg-gradient-to-r from-slate-800 to-slate-900 hover:from-amber-500 hover:to-orange-600 text-white font-bold py-5 rounded-2xl shadow-xl transition transform hover:-translate-y-1 flex justify-center items-center text-lg tracking-widest">
+                        <span id="btnText">ยืนยันการจองภาพถ่าย</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
 
     <!-- Modal Success -->
     <div id="successModal" class="fixed inset-0 bg-slate-900/90 hidden items-center justify-center z-[100] p-4 backdrop-blur-md">
-        <div class="bg-white rounded-[3rem] p-12 max-w-sm w-full text-center shadow-2xl">
-            <div class="w-24 h-24 bg-green-100 text-green-500 rounded-full flex items-center justify-center mx-auto mb-8 text-5xl shadow-inner border-4 border-white">✓</div>
-            <h3 class="text-3xl font-bold text-gray-800 mb-4 uppercase tracking-tighter">ส่งข้อมูลสำเร็จ!</h3>
-            <p class="text-slate-500 mb-10 leading-relaxed text-center">บันทึกข้อมูลการจองและสลิปเข้า <br><span class="font-bold text-blue-600 uppercase font-bold uppercase">Google Sheets</span> <br>ของคุณครูเรียบร้อยแล้วครับ</p>
-            <button onclick="location.reload()" class="w-full bg-slate-800 text-white py-5 rounded-3xl font-bold hover:bg-slate-700 transition shadow-lg tracking-widest uppercase text-sm">เสร็จสิ้น</button>
+        <div class="bg-white rounded-[2.5rem] p-12 max-w-sm w-full text-center shadow-2xl">
+            <div class="w-20 h-20 bg-green-100 text-green-500 rounded-full flex items-center justify-center mx-auto mb-8 text-4xl shadow-inner border-4 border-white">✓</div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-4 uppercase">จองสำเร็จ!</h3>
+            <p class="text-slate-500 mb-10 leading-relaxed text-center">ข้อมูลและสลิปถูกบันทึกลง <br><span class="font-bold text-blue-600 uppercase">Google Sheets</span> <br>ของคุณครูเรียบร้อยแล้วครับ</p>
+            <button onclick="location.reload()" class="w-full bg-slate-800 text-white py-4 rounded-2xl font-bold hover:bg-slate-700 transition shadow-lg tracking-widest uppercase text-sm">ปิดหน้านี้</button>
         </div>
     </div>
 
     <script>
-        // 🌟 บรรทัดที่ 225: เชื่อมต่อ Google Apps Script URL สำเร็จแล้ว
+        // 🌟 ลิงก์ Google Apps Script URL ของคุณครูเจี๊ยบ
         const scriptURL = 'https://script.google.com/macros/s/AKfycbzeUvtNViQV-2dG9K3drw-7y6MhgZKhEU_P2ofIXhlPntcEZq3NxvfMNjNwhqJtz5eG2A/exec';
         
         let slipBase64 = "";
 
-        // จัดการช่องที่อยู่
         function toggleAddress(show) {
             const box = document.getElementById('addressBox');
             const input = box.querySelector('textarea');
-            if (show) {
-                box.classList.remove('hidden');
-                input.required = true;
-            } else {
-                box.classList.add('hidden');
-                input.required = false;
-            }
+            if (show) { box.classList.remove('hidden'); input.required = true; } 
+            else { box.classList.add('hidden'); input.required = false; }
         }
 
-        // พรีวิวรูปภาพ
         function handlePreview(input) {
             const file = input.files[0];
             if (file) {
@@ -202,23 +274,20 @@
                 reader.onload = function(e) {
                     slipBase64 = e.target.result;
                     document.getElementById('uploadPreview').innerHTML = `
-                        <img src="${slipBase64}" class="max-h-64 mx-auto rounded-2xl shadow-xl border-4 border-white mb-4">
-                        <p class="text-green-600 font-bold text-xs uppercase tracking-[0.3em] text-center">✅ Attached Successfully</p>
-                        <p class="text-[10px] text-slate-400 mt-2 italic underline cursor-pointer text-center">คลิกที่นี่เพื่อเปลี่ยนรูปใหม่</p>
+                        <img src="${slipBase64}" class="max-h-64 mx-auto rounded-xl shadow-lg border-2 border-white mb-2">
+                        <p class="text-green-600 font-bold text-xs uppercase tracking-widest">✅ แนบสลิปเรียบร้อย</p>
                     `;
                 };
                 reader.readAsDataURL(file);
             }
         }
 
-        // ส่งข้อมูล
         document.getElementById('bookingForm').addEventListener('submit', function(e) {
             e.preventDefault();
-
             const btn = document.getElementById('submitBtn');
             const btnText = document.getElementById('btnText');
             btn.disabled = true;
-            btnText.innerHTML = '<div class="flex items-center justify-center space-x-3"><div class="loading-spinner"></div><span>กำลังบันทึกข้อมูล...</span></div>';
+            btnText.innerHTML = '<div class="flex items-center justify-center space-x-3"><div class="loading-spinner"></div><span>กำลังบันทึก...</span></div>';
 
             const formData = {
                 name: this.name.value,
@@ -232,7 +301,6 @@
             fetch(scriptURL, {
                 method: 'POST',
                 mode: 'no-cors',
-                cache: 'no-cache',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData)
             })
@@ -241,15 +309,15 @@
                 document.getElementById('successModal').classList.add('flex');
             })
             .catch(error => {
-                alert('เกิดข้อผิดพลาดในการส่งข้อมูล กรุณาลองใหม่อีกครั้งครับ');
+                alert('เกิดข้อผิดพลาด กรุณาลองใหม่');
                 btn.disabled = false;
-                btnText.innerHTML = 'ยืนยันการจอง';
+                btnText.innerHTML = 'ยืนยันการจองภาพถ่าย';
             });
         });
     </script>
 
-    <footer class="bg-white border-t py-12 text-center text-slate-300 text-[9px] uppercase font-bold tracking-[0.3em] mt-auto">
-        <p>© 2026 ISOPIXEL DIGITAL BOOKING SYSTEM | POWERED BY GOOGLE SHEETS</p>
+    <footer class="bg-white border-t py-12 text-center text-slate-300 text-[10px] uppercase font-bold tracking-[0.3em] mt-auto">
+        <p>© 2026 ISOPIXEL STUDIO | POWERED BY GOOGLE SHEETS</p>
     </footer>
 </body>
 </html>
